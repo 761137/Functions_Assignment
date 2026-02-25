@@ -1,3 +1,4 @@
+# Task 1 — Process the Scores(average score is calculated for the given dictionary format)
 def process_scores(students):
    result={}
    for name,marks in students.items():
@@ -6,7 +7,7 @@ def process_scores(students):
    return result
                      
 
-
+# Classify the Grades (Grade is calculated for the average from function process_scores)
 def classify_grades(averages):
     grade={}
     for name,avg in averages.items():
@@ -21,6 +22,7 @@ def classify_grades(averages):
         grade[name]=(avg,grades)
     return grade;
 
+# Generate the report(Report is generated for the results from process_scores and classify_grades)
 def generate_report(classified, passing_avg=70):
     print("===== Student Grade Report =====")
     tot_count=0
@@ -41,8 +43,11 @@ def generate_report(classified, passing_avg=70):
     print("Total Students:",tot_count)
     print("Passed:",pass_count)
     print("Failed:",fail_count)
-    
+
+    # Dictionary input
 Student_list={"Alice":[75,82,90,85],"Bob":[85,77,72,75],"Clara":[42,55,59]}
+
+# Function call
 Results=process_scores(Student_list)
 Final_Grade=classify_grades(Results)
 generate_report(Final_Grade)
